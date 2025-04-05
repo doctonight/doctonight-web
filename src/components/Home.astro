@@ -1,0 +1,24 @@
+---
+import CompanyIsotype from "../assets/img/CompanyIsotype.astro";
+---
+
+<main class="flex min-h-screen flex-col items-center justify-center">
+  <CompanyIsotype className="size-32" />
+  <h1 class="text-3xl font-bold">Doctonight Labs</h1>
+</main>
+
+<style>
+  main {
+    animation: showed 1s ease-in-out;
+  }
+
+  @keyframes showed {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+</style>
