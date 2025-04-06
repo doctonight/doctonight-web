@@ -9,4 +9,5 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   site: "https://doctonight.github.io",
+  base: "doctonight-web",
 });
