@@ -1,5 +1,70 @@
 ---
 import "../styles/global.css";
+
+const BASE_URL = import.meta.env.BASE_URL || "/";
+
+const FAVICONS = [
+  {
+    rel: "icon",
+    type: "image/png",
+    href: `${BASE_URL}/favicon-16.png`,
+    sizes: "16x16",
+  },
+  {
+    rel: "icon",
+    type: "image/png",
+    href: `${BASE_URL}/favicon-24.png`,
+    sizes: "24x24",
+  },
+  {
+    rel: "icon",
+    type: "image/png",
+    href: `${BASE_URL}/favicon-32.png`,
+    sizes: "32x32",
+  },
+  {
+    rel: "icon",
+    type: "image/png",
+    href: `${BASE_URL}/favicon-48.png`,
+    sizes: "48x48",
+  },
+  {
+    rel: "icon",
+    type: "image/png",
+    href: `${BASE_URL}/favicon-64.png`,
+    sizes: "64x64",
+  },
+  {
+    rel: "icon",
+    type: "image/png",
+    href: `${BASE_URL}/favicon-72.png`,
+    sizes: "72x72",
+  },
+  {
+    rel: "icon",
+    type: "image/png",
+    href: `${BASE_URL}/favicon-96.png`,
+    sizes: "96x96",
+  },
+  {
+    rel: "icon",
+    type: "image/png",
+    href: `${BASE_URL}/favicon-256.png`,
+    sizes: "256x256",
+  },
+  {
+    rel: "icon",
+    type: "image/svg+xml",
+    href: `${BASE_URL}/favicon.svg`,
+    sizes: "any",
+  },
+  {
+    rel: "apple-touch-icon",
+    type: "image/png",
+    href: `${BASE_URL}/apple-touch-icon-180.png`,
+    sizes: "180x180",
+  },
+];
 ---
 
 <!doctype html>
@@ -7,26 +72,16 @@ import "../styles/global.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
-    <link rel="icon" type="image/png" href="/favicon-24x24.png" sizes="24x24" />
-    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48" />
-    <link rel="icon" type="image/png" href="/favicon-64x64.png" sizes="64x64" />
-    <link rel="icon" type="image/png" href="/favicon-72x72.png" sizes="72x72" />
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link
-      rel="icon"
-      type="image/png"
-      href="/favicon-256x256.png"
-      sizes="256x256"
-    />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="any" />
-    <link
-      rel="apple-touch-icon"
-      type="image/png"
-      href="/apple-touch-icon-180x180.png"
-      sizes="180x180"
-    />
+    {
+      FAVICONS.map((favicon) => (
+        <link
+          rel={favicon.rel}
+          type={favicon.type}
+          href={favicon.href}
+          sizes={favicon.sizes}
+        />
+      ))
+    }
     <meta name="apple-mobile-web-app-title" content="Doc" />
     <meta name="generator" content={Astro.generator} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
